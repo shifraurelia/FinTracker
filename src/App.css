@@ -1,0 +1,757 @@
+
+/* =================================
+   1. GLOBAL SETTINGS
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f6fc;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =================================
+   2. MAIN APP
+================================= */
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f5f6fc;
+  color: #252744;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* =================================
+   3. SIDEBAR
+================================= */
+
+.sidebar {
+  width: 245px;
+  min-height: 100vh;
+  flex-shrink: 0;
+  background: white;
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ececf5;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #6664d9;
+  margin-bottom: 55px;
+}
+
+.menu-label {
+  font-size: 11px;
+  color: #a0a1b5;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar nav a {
+  padding: 14px;
+  border-radius: 12px;
+  color: #85869c;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+  background: #f3f2ff;
+}
+
+.sidebar nav a.active {
+  background: linear-gradient(100deg, #eeeeff, #e8f4ff);
+  color: #6462d5;
+  font-weight: 600;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  color: #999ab0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =================================
+   4. MAIN CONTENT
+================================= */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 42px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #8585c8;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+
+.subtitle {
+  color: #999aaf;
+  font-size: 14px;
+}
+
+/* =================================
+   5. BUTTONS
+================================= */
+
+button {
+  background: white;
+  border: 1px solid #e6e6f0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  color: #6664d9;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* =================================
+   6. CURRENT BALANCE
+================================= */
+
+.balance-card {
+  padding: 32px;
+  border-radius: 22px;
+  color: white;
+  background: linear-gradient(
+    115deg,
+    #7775e9,
+    #829ce9,
+    #76c9df
+  );
+  box-shadow: 0 12px 30px #8d9ce933;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.balance-card p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.balance-card h2 {
+  color: #ffffff;
+  font-size: 38px;
+  margin: 20px 0 10px;
+}
+
+.balance-card span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* =================================
+   7. SUMMARY CARDS
+================================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.summary-card,
+.panel {
+  min-width: 0;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #eeeeF5;
+}
+
+.summary-card p,
+.panel p {
+  color: #999aaf;
+  font-size: 13px;
+}
+
+.summary-card h2 {
+  color: #292b4a;
+  font-size: 24px;
+  margin: 16px 0 10px;
+}
+
+.summary-card span {
+  color: #7775d9;
+  font-size: 12px;
+}
+
+/* =================================
+   8. BOTTOM DASHBOARD
+================================= */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+}
+
+.panel h3 {
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* =================================
+   9. TRANSACTION FORM
+================================= */
+
+.transaction-form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.transaction-form h3 {
+  margin-bottom: 10px;
+}
+
+.transaction-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.transaction-form label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5e5ef;
+  border-radius: 10px;
+  background: white;
+  color: #252744;
+  font: inherit;
+}
+
+.type-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.type-buttons button {
+  flex: 1;
+}
+
+.type-buttons button.selected {
+  background: #eeeeff;
+  border-color: #7775e9;
+  font-weight: 700;
+}
+
+.submit-button {
+  margin-top: 18px;
+  background: linear-gradient(110deg, #7775e9, #76bddd);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+}
+
+/* =================================
+   10. TRANSACTION HISTORY
+================================= */
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eeeeF5;
+}
+
+.transaction-row p {
+  margin-top: 5px;
+}
+
+.income {
+  color: #24a879;
+}
+
+.expense {
+  color: #df6c7a;
+}
+
+/* =================================
+   11. DARK MODE
+================================= */
+
+.app.dark {
+  background: #171827;
+  color: #f4f4ff;
+}
+
+.dark .sidebar,
+.dark .summary-card,
+.dark .panel {
+  background: #222438;
+  border-color: #34364c;
+}
+
+.dark .sidebar nav a {
+  color: #b4b5cc;
+}
+
+.dark .sidebar nav a:hover {
+  background: #303149;
+}
+
+.dark .sidebar nav a.active {
+  background: #37375c;
+  color: #b7b5ff;
+}
+
+.dark .sidebar-bottom {
+  color: #aaaac1;
+}
+
+.dark .summary-card p,
+.dark .panel p {
+  color: #aaaac1;
+}
+
+.dark .summary-card h2 {
+  color: #f4f2ff;
+}
+
+.dark .summary-card span {
+  color: #aaa5ff;
+}
+
+.dark .transaction-form input,
+.dark .transaction-form select {
+  background: #222438;
+  color: white;
+  border-color: #34364c;
+}
+
+.dark .transaction-form input::placeholder {
+  color: #aaaac1;
+}
+
+.dark .type-buttons button {
+  background: #222438;
+  color: #f4f4ff;
+  border-color: #34364c;
+}
+
+.dark .type-buttons button.selected {
+  background: #37375c;
+  color: white;
+  border-color: #7775e9;
+}
+
+.dark button:not(.submit-button) {
+  background: #222438;
+  color: #f4f4ff;
+  border-color: #34364c;
+}
+
+.dark .submit-button {
+  color: white;
+}
+
+/* =================================
+   12. TABLET RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+    padding: 25px 15px;
+  }
+
+  .main {
+    padding: 28px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================
+   13. MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+    border-right: none;
+    border-bottom: 1px solid #ececf5;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .sidebar nav a {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .menu-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    padding: 18px;
+  }
+
+  header {
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .balance-card {
+    padding: 25px 20px;
+  }
+
+  .balance-card h2 {
+    font-size: 30px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-card,
+  .panel {
+    padding: 20px;
+  }
+
+  .transaction-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* =================================
+   14. SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+  .main {
+    padding: 12px;
+  }
+
+  .sidebar {
+    padding: 14px;
+  }
+
+  .sidebar nav a {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .balance-card h2 {
+    font-size: 26px;
+  }
+
+  .summary-card h2 {
+    font-size: 21px;
+  }
+}
+
+/* PAGE TITLE COLORS */
+
+/* Light Mode */
+.app:not(.dark) header h1 {
+  color: #292b4a;
+}
+
+/* Dark Mode */
+.app.dark header h1 {
+  color: #ffffff;
+}
+
+/* LEFT ALIGN DASHBOARD HEADER */
+
+.main header {
+  text-align: left;
+}
+
+.main header > div:first-child {
+  text-align: left;
+  margin-right: auto;
+}
+
+/* =================================
+   15. WELCOME TUTORIAL
+================================= */
+
+.tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 17, 35, 0.72);
+  backdrop-filter: blur(7px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.tutorial-modal {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  background: #ffffff;
+  color: #292b4a;
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: tutorialAppear 0.35s ease;
+}
+
+@keyframes tutorialAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutorial-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: #999ab0;
+  font-size: 25px;
+  padding: 4px 9px;
+}
+
+.tutorial-brand {
+  color: #7775e9;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+.tutorial-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(130deg, #eeeeff, #e3f6ff);
+  color: #7775e9;
+  font-size: 34px;
+}
+
+.tutorial-label {
+  color: #7775e9;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.tutorial-modal h2 {
+  font-size: 25px;
+  margin-bottom: 14px;
+  color: #292b4a;
+}
+
+.tutorial-description {
+  color: #77788e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tutorial-detail {
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 13px;
+  background: #f5f5ff;
+  color: #6664a0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tutorial-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+.tutorial-progress span {
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+  background: #dedeee;
+  transition: 0.3s;
+}
+
+.tutorial-progress span.active {
+  width: 25px;
+  background: #7775e9;
+}
+
+.tutorial-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.tutorial-navigation {
+  display: flex;
+  gap: 9px;
+}
+
+.tutorial-skip,
+.tutorial-back {
+  background: transparent;
+  border: none;
+  color: #85869c;
+}
+
+.tutorial-next {
+  background: linear-gradient(110deg, #7775e9, #76bddd);
+  border: none;
+  color: white;
+  font-weight: 600;
+  min-width: 115px;
+}
+
+/* DARK MODE TUTORIAL */
+
+.dark .tutorial-modal {
+  background: #222438;
+  color: #f4f4ff;
+}
+
+.dark .tutorial-modal h2 {
+  color: #ffffff;
+}
+
+.dark .tutorial-description {
+  color: #b4b5cc;
+}
+
+.dark .tutorial-detail {
+  background: #303149;
+  color: #c4c2ff;
+}
+
+.dark .tutorial-skip,
+.dark .tutorial-back {
+  color: #b4b5cc;
+}
+
+/* MOBILE TUTORIAL */
+
+@media (max-width: 500px) {
+  .tutorial-modal {
+    padding: 30px 22px;
+    border-radius: 20px;
+  }
+
+  .tutorial-modal h2 {
+    font-size: 22px;
+  }
+
+  .tutorial-description {
+    font-size: 13px;
+  }
+
+  .tutorial-detail {
+    font-size: 12px;
+    padding: 14px;
+  }
+}
